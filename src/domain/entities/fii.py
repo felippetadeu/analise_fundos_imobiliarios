@@ -36,7 +36,7 @@ class FII:
                 self.valor_patrimonial = float(valor.replace('.', '').replace(',', '.'))
             elif titulo == 'Rentab. no mês':
                 self.rentabilidade_mes = float(valor.replace('.', '').replace('%', '').replace(',', '.'))
-            elif titulo == 'P/VP':
+            elif titulo == 'P/VP' and valor != 'N/A':
                 self.ultimo_rendimento = float(valor.replace('.', '').replace(',', '.'))
         except Exception as e:
             print(e)

@@ -95,12 +95,9 @@ class FIIService:
 
     def start(self, save: bool = True):
         results = self.get_fiis()
-        print(results)
         filtered_results = self.get_fiis_com_dividend_patrimonio(results)
-        print(filtered_results)
         for idx, fii in enumerate(filtered_results):
             self.get_fii(fii)
-            print(f'Processed {idx+1} of {str(len(filtered_results))} ')
 
         df = pd.DataFrame.from_dict(filtered_results)
         if save:
